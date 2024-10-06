@@ -22,6 +22,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                
                 bat "docker rm -f configserver-container"
                 bat "docker rmi -f configserver-image"
                 bat "docker build -t configserver-image ."
